@@ -1,0 +1,27 @@
+[
+  {
+    "id": "t003",
+    "username": "fastapi_fan",
+    "content": "FastAPI feels like the old Unix philosophy: do one thing and do it well."
+  },
+  {
+    "id": "t004",
+    "username": "surjan",
+    "content": "If your code works on the first try, you probably missed something important."
+  },
+  {
+    "id": "t005",
+    "username": "surjan",
+    "content": "Readable code is future-proof. Your future self is a very unforgiving reviewer."
+  },
+  {
+    "id": "8706878c-eb4c-46da-ba7f-74e34a018b23",
+    "username": "surjan",
+    "content": "this is bot a valid tweeet just a test"
+  },
+  {
+    "id": "t001",
+    "username": "code_monkey",
+    "content": "this is the demo code"
+  }
+]

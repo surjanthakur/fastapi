@@ -1,0 +1,117 @@
+{
+  "u002": {
+    "name": "Rohit",
+    "age": 28,
+    "city": "Mumbai",
+    "work_role": "Frontend Dev",
+    "email": "rohit.ui@example.com",
+    "address": {
+      "street": "Andheri West",
+      "state": "Maharashtra",
+      "pincode": "400058"
+    }
+  },
+  "u003": {
+    "name": "Neha",
+    "age": 26,
+    "city": "Pune",
+    "work_role": "UI Designer",
+    "email": "neha.design@example.com",
+    "address": {
+      "street": "Baner Road",
+      "state": "Maharashtra",
+      "pincode": "411045"
+    }
+  },
+  "u004": {
+    "name": "Suresh",
+    "age": 32,
+    "city": "Jaipur",
+    "work_role": "Project Lead",
+    "email": "suresh.lead@example.com",
+    "address": {
+      "street": "Malviya Nagar",
+      "state": "Rajasthan",
+      "pincode": "302017"
+    }
+  },
+  "u005": {
+    "name": "Pooja",
+    "age": 23,
+    "city": "Indore",
+    "work_role": "Intern",
+    "email": "pooja.intern@example.com",
+    "address": {
+      "street": "Vijay Nagar",
+      "state": "Madhya Pradesh",
+      "pincode": "452010"
+    }
+  },
+  "u006": {
+    "name": "Karan",
+    "age": 29,
+    "city": "Chandigarh",
+    "work_role": "DevOps Eng",
+    "email": "karan.devops@example.com",
+    "address": {
+      "street": "Sector 22",
+      "state": "Chandigarh",
+      "pincode": "160022"
+    }
+  },
+  "u007": {
+    "name": "Anjali",
+    "age": 27,
+    "city": "Bhopal",
+    "work_role": "Data Analyst",
+    "email": "anjali.data@example.com",
+    "address": {
+      "street": "Arera Colony",
+      "state": "Madhya Pradesh",
+      "pincode": "462016"
+    }
+  },
+  "u008": {
+    "name": "Vikas",
+    "age": 35,
+    "city": "Noida",
+    "work_role": "Tech Manager",
+    "email": "vikas.manager@example.com",
+    "address": {
+      "street": "Sector 62",
+      "state": "Uttar Pradesh",
+      "pincode": "201309"
+    }
+  },
+  "u009": {
+    "name": "Sneha",
+    "age": 25,
+    "city": "Kolkata",
+    "work_role": "QA Tester",
+    "email": "sneha.qa@example.com",
+    "address": {
+      "street": "Salt Lake",
+      "state": "West Bengal",
+      "pincode": "700091"
+    }
+  },
+  "u010": {
+    "name": "Rahul",
+    "age": 31,
+    "city": "Bangalore",
+    "work_role": "AI Engineer",
+    "email": "rahul.ai@example.com",
+    "address": {
+      "street": "Whitefield",
+      "state": "Karnataka",
+      "pincode": "560066"
+    }
+  },
+  "t001": {
+    "name": "test1",
+    "age": 19,
+    "city": "stringksd",
+    "work_role": "stringdkfjdkf",
+    "email": "user@example.com"
+  }
+}
