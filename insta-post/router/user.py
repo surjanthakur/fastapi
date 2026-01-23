@@ -2,7 +2,7 @@ from sqlmodel import select
 from fastapi import APIRouter, HTTPException, Path, Depends, status
 from fastapi.responses import JSONResponse
 from db.db_connection import get_session
-from validation.pydantic_schema import user_schema 
+from validation.pydantic_schema import user_schema
 from sqlmodel.ext.asyncio.session import AsyncSession
 from db.db_tables import User
 
@@ -20,7 +20,7 @@ async def create_new_user(
     db: AsyncSession = Depends(get_session),
 ):
     try:
-        new_user = User(**user_data.model_dump())
+        new_user = User(**user_data.model_dump(exclude_unset=True))
         db.add(new_user)
         await db.commit()
         await db.refresh(new_user)
