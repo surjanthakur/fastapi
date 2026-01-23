@@ -25,11 +25,11 @@ async def create_new_user(
         await db.commit()
         await db.refresh(new_user)
         return new_user
-    except Exception:
+    except Exception as err:
         await db.rollback()
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Failed to create user !!",
+            detail=f"Failed to create user: {err} !!",
         )
 
 

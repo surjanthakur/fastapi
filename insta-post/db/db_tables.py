@@ -15,7 +15,8 @@ class User(SQLModel, table=True):
         Field(..., min_length=3, max_length=20),
         AfterValidator(lambda v: v.title()),
     ]
-    email: str = (Field(..., unique=True),)
+    email: str = Field(..., unique=True)
+    profiles: List["Profile"] = Relationship(back_populates="user" , sa_relationship_kwargs={"cascade": "all, delete"})
     created_at: date = Field(default_factory=date.today)
 
     @field_validator("email")
@@ -34,6 +35,7 @@ class Profile(SQLModel, table=True):
         default_factory=lambda: str(uuid.uuid4()), unique=True, primary_key=True
     )
     user_id: str = Field(foreign_key="user.id", nullable=False, ondelete="CASCADE")
+    user:"User" = Relationship(back_populates="profiles" , sa_relationship_kwargs={"cascade": "all, delete"})
     bio: Annotated[
         str, Field(min_length=10, max_items=40), AfterValidator(lambda v: v.title())
     ]
