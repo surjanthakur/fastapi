@@ -13,6 +13,7 @@ async def lifespan(app: FastAPI):
         await create_db_tables()
         print("database created successfully 🚀!")
         yield
+
     except Exception as e:
         logging.error(f"Error during database setup: {e}")
         raise e

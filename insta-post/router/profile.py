@@ -5,7 +5,7 @@ from sqlmodel.ext.asyncio.session import AsyncSession
 from db.db_connection import get_session
 from db.db_tables import Profile, User
 from sqlmodel import desc, select
-from validation.pydantic_schema import profile_schema , request_profile
+from validation.pydantic_schema import profile_schema, request_profile
 
 profile_router = APIRouter(tags=["profile"], prefix="/profile")
 
@@ -33,7 +33,11 @@ async def get_all_profiles(db: AsyncSession = Depends(get_session)):
     "/{profile_id}", status_code=status.HTTP_200_OK, response_model=profile_schema
 )
 async def get_profile_by_id(profile_id: str, db: AsyncSession = Depends(get_session)):
-    result = await db.exec(select(Profile).options(selectinload(Profile.posts)).where(Profile.id == profile_id))
+    result = await db.exec(
+        select(Profile)
+        .options(selectinload(Profile.posts))
+        .where(Profile.id == profile_id)
+    )
     profile = result.first()
     if not profile:
         raise HTTPException(
