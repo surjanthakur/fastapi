@@ -35,7 +35,7 @@ class Profile(SQLModel, table=True):
         default_factory=lambda: str(uuid.uuid4()), unique=True, primary_key=True
     )
     user_id: str = Field(foreign_key="user.id", nullable=False, ondelete="CASCADE")
-    user:"User" = Relationship(back_populates="profiles" , sa_relationship_kwargs={"cascade": "all, delete"})
+    user:"User" = Relationship(back_populates="profiles" )
     bio: Annotated[
         str, Field(min_length=10, max_items=40), AfterValidator(lambda v: v.title())
     ]
@@ -43,7 +43,7 @@ class Profile(SQLModel, table=True):
 
 
 # Post table ----------------------------------->
-class Post(SQLModel, table=true):
+class Post(SQLModel, table=True):
     id: str = Field(
         default_factory=lambda: str(uuid.uuid4()), unique=True, primary_key=True
     )

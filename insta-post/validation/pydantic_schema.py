@@ -21,3 +21,13 @@ class profile_schema(BaseModel):
     created_at: date
     bio: str
     posts: List[post_schema]
+
+# combined user profile schema
+class user_profile_schema(BaseModel):
+    username: str
+    email: EmailStr
+    profiles: List[profile_schema]
+
+# request profile schema
+class request_profile(BaseModel):
+    bio:str

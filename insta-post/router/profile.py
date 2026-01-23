@@ -5,7 +5,7 @@ from sqlmodel.ext.asyncio.session import AsyncSession
 from db.db_connection import get_session
 from db.db_tables import Profile, User
 from sqlmodel import desc, select
-from validation.pydantic_schema import profile_schema
+from validation.pydantic_schema import profile_schema , request_profile
 
 profile_router = APIRouter(tags=["profile"], prefix="/profile")
 
@@ -46,12 +46,8 @@ async def get_profile_bu_id(profile_id: str, db: AsyncSession = Depends(get_sess
 # create new profile
 @profile_router.post("/create/{user_id}")
 async def create_profile(
+    profile_data: request_profile,
     user_id: str = Path(..., title="enter your user id"),
-    bio: str = Path(
-        ...,
-        title="enter your bio",
-        description="add you bio in this field in simple words.",
-    ),
     db: AsyncSession = Depends(get_session),
 ):
     result = await db.exec(select(User).where(User.id == user_id))
@@ -61,7 +57,7 @@ async def create_profile(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"user id: {user_id} not found !!",
         )
-    new_profile = Profile(user_id=user_id, bio=bio)
+    new_profile = Profile(user_id=user_id, bio=profile_data.bio)
     db.add(new_profile)
     db.commit()
     db.refresh(new_profile)
