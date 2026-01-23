@@ -10,16 +10,21 @@ logging.basicConfig(level=logging.INFO)
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     try:
-     await create_db_tables()
-     print("database created successfully 🚀!")
-     yield
+        await create_db_tables()
+        print("database created successfully 🚀!")
+        yield
     except Exception as e:
         logging.error(f"Error during database setup: {e}")
         raise e
-    
 
 
-app = FastAPI(lifespan=lifespan)
+PRODUCTION = False
+
+app = FastAPI(
+    lifespan=lifespan,
+    docs_url=None if PRODUCTION else "/docs",
+    redoc_url=None if PRODUCTION else "/redoc",
+)
 
 
 app.include_router(router=user.user_router)
