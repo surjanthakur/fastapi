@@ -24,6 +24,7 @@ app = FastAPI(
     lifespan=lifespan,
     docs_url=None if PRODUCTION else "/docs",
     redoc_url=None if PRODUCTION else "/redoc",
+    openapi_url=None if PRODUCTION else "/openapi.json",
 )
 
 
