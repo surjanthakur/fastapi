@@ -32,8 +32,8 @@ async def get_all_profiles(db: AsyncSession = Depends(get_session)):
 @profile_router.get(
     "/{profile_id}", status_code=status.HTTP_200_OK, response_model=profile_schema
 )
-async def get_profile_bu_id(profile_id: str, db: AsyncSession = Depends(get_session)):
-    result = await db.exec(select(Profile).where(Profile.id == profile_id))
+async def get_profile_by_id(profile_id: str, db: AsyncSession = Depends(get_session)):
+    result = await db.exec(select(Profile).options(selectinload(Profile.posts)).where(Profile.id == profile_id))
     profile = result.first()
     if not profile:
         raise HTTPException(
