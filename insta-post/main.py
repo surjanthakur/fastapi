@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from db.db_connection import create_db_tables
 from contextlib import asynccontextmanager
-from router import user, profile, post
+from router import user, profile
 
 
 @asynccontextmanager

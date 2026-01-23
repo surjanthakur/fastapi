@@ -182,6 +182,7 @@ dependencies = [
     { name = "psycopg2-binary" },
     { name = "pydantic", extra = ["email"] },
     { name = "python-dotenv" },
+    { name = "sqlalchemy" },
     { name = "sqlmodel" },
     { name = "uvicorn" },
 ]
@@ -194,6 +195,7 @@ requires-dist = [
     { name = "psycopg2-binary", specifier = ">=2.9.11" },
     { name = "pydantic", extras = ["email"], specifier = ">=2.12.5" },
     { name = "python-dotenv", specifier = ">=1.2.1" },
+    { name = "sqlalchemy", specifier = ">=2.0.45" },
     { name = "sqlmodel", specifier = ">=0.0.31" },
     { name = "uvicorn", specifier = ">=0.40.0" },
 ]
