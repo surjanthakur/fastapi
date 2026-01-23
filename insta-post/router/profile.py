@@ -59,8 +59,8 @@ async def create_profile(
         )
     new_profile = Profile(user_id=user_id, bio=profile_data.bio)
     db.add(new_profile)
-    db.commit()
-    db.refresh(new_profile)
+    await db.commit()
+    await db.refresh(new_profile)
     return JSONResponse(
         status_code=status.HTTP_201_CREATED,
         content=f"profile with id:{new_profile.id} create successfuly!",
@@ -88,8 +88,8 @@ async def update_profile(
         )
     my_profile.bio = bio
     db.add(my_profile)
-    db.commit()
-    db.refresh(my_profile)
+    await db.commit()
+    await db.refresh(my_profile)
 
 
 # delete profile
@@ -105,8 +105,8 @@ async def delete_profile(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"profile id: {profile_id} not found !!",
         )
-    db.delete(my_profile)
-    db.commit()
+    await db.delete(my_profile)
+    await db.commit()
     return JSONResponse(
         status_code=status.HTTP_200_OK, content="profile deleted successfuly!"
     )
