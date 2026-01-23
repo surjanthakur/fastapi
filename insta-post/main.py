@@ -16,7 +16,6 @@ async def lifespan(app: FastAPI):
 
     except Exception as e:
         logging.error(f"Error during database setup: {e}")
-        raise e
 
 
 PRODUCTION = False
