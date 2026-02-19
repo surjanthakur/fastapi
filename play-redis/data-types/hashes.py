@@ -32,6 +32,7 @@ def hashesInit():
     rds.hstrlen("sturents", "name")  # return the length of the values.
     rds.hvals("students")  # return the list of values in a hash record.
     rds.hrandfield("students")  # return one or more randome fields from hash record.
+    rds.incrby("students", "age", 2)  # it increases the students age by 2 [20+2 = 22]
 
 
 hashesInit()
