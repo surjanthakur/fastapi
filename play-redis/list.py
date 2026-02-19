@@ -12,6 +12,7 @@ def listinit():
     rds.rpush("msg", "holla")  # push the value in right side.
     rds.rpop("msg")  # pop the value from the  right side.
 
+    rds.delete("msg")  # delete the list.
     rds.llen("msg")  # get the length of the list.
     rds.lrange("msg", 0, 2)  # get values from 0 index to 2 index
     rds.lrange("msg", 0, -1)  # from start to end list values
