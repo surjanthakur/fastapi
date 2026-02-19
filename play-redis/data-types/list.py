@@ -8,7 +8,6 @@ def listinit():
     rds.lpush("msg", "holla")
     rds.lpush("msg", "namaste")  # push values in left side.
     rds.lpop("msg")  # pop the value from the head of the list.
-
     rds.rpush("msg", "holla")  # push the value in right side.
     rds.rpop("msg")  # pop the value from the  right side.
 
