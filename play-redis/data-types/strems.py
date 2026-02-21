@@ -18,3 +18,5 @@ rds = redis.Redis(port=6379, host="localhost", db=0)
 
 def stream_init():
     rds.xadd("notify", {"msg": 4, "friend_req": 34})  # add new entry to stream.
+    rds.xdelex("notify", "msg")  # delete one or multiple entries from strem.
+    rds.xlen("notify")  # return the length of a stream
