@@ -2,10 +2,10 @@ from fastapi import FastAPI
 import httpx
 
 
-router = FastAPI()
+app = FastAPI()
 
 
-@router.get("/")
+@app.get("/")
 async def fetch_random_data():
     try:
         async with httpx.AsyncClient() as client:
